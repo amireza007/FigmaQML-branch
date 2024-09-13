@@ -575,9 +575,11 @@ int main(int argc, char *argv[]) {
          QObject::connect(&engine, &QQmlApplicationEngine::objectCreated, &engine, [qml_source, &figmaGet, &engine](QObject *object, const QUrl &url) {
              if(object && url == qml_source) {
                  // UI loaded - I should implement READ/WRITE for these properties, but this is the only place used in C++
-                 if(figmaGet->property("projectToken").toString().isEmpty() && figmaGet->property("userToken").toString().isEmpty()) {
-                     QMetaObject::invokeMethod(engine.rootObjects()[0], "openTokens");
-                 }
+                 // if(figmaGet->property("projectToken").toString().isEmpty() && figmaGet->property("userToken").toString().isEmpty()) {
+                 //     QMetaObject::invokeMethod(engine.rootObjects()[0], "openTokens");
+                 // }
+                 QMetaObject::invokeMethod(engine.rootObjects()[0], "openTokens");
+
              }
          });
 
