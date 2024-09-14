@@ -120,6 +120,7 @@ set(NON_SOURCE
 qt_add_executable(${PROJECT_NAME}
     ${SOURCES}
     ${NON_SOURCE}
+    src/TestingFigmaQML.qml
 )
 
 
